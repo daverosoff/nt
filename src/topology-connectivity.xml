@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mathbook xml:lang="en-US">
+    <docinfo>
+        <!-- <macros>
+            \theoremstyle{plain}
+            \newtheorem{theorem}{Theorem}
+            \newtheorem{corollary}[theorem]{Corollary}
+            \newtheorem{lemma}[theorem]{Lemma}
+            \newtheorem*{lemma*}{Lemma}
+            \newtheorem{exdef}[theorem]{Exercise-Definition}
+
+            \theoremstyle{definition}
+            \newtheorem{definition}{Definition}
+            \newtheorem{exercise}[theorem]{Exercise}
+            \newtheorem{example}[theorem]{Example}
+            \newtheorem{fact}[definition]{Fact}
+            \newtheorem*{axiom*}{Axiom}
+
+            \theoremstyle{remark}
+            \newtheorem*{remark*}{Remark}
+        </macros> -->
+        <initialism>T</initialism>
+    </docinfo>
+    <article xml:id="t-conn">
+        <title>Connectivity</title>
+        <subtitle>Only connect.</subtitle>
+        <section xml:id="t-conn-acknowledgement">
+            <title>Acknowledgement</title>
+            <p>This section is loosely inspired by Chapter 4 of Crossley's <em>Essential Topology.</em></p>
+        </section>
+        <section xml:id="t-conn-introduction">
+            <title>Introduction</title>
+            <p>A connected topological space is one that you would say consists of only one <lq />piece<rq />. Of course, since we are topologists, we wish to make sense of this idea in terms of open (and closed) sets, but it is perhaps useful to explore a different characterization first.</p>
+
+            <p>We often say to beginning calculus students that a continuous function is one whose graph can be drawn without <lq />picking up the pencil<rq />. You might try to define a connected space in a similar way.</p>
+    
+            <definition xml:id="t-conn-def-path">
+                <statement>
+                    A <em>path</em> in a topological space <m>X</m> is a continuous function <m>\gamma \colon [0, 1] \to X</m>.
+                </statement>
+            </definition>
+
+            <p>The idea of <xref ref="t-conn-def-path" /> is that the points <m>\gamma(0)</m> and <m>\gamma(1)</m> are the two endpoints. Since the function <m>\gamma</m> is continuous, the images <m>\gamma(t)</m> for <m>0 \lt t \lt 1</m> link the two endpoints without picking up the pencil. Many reasonable people would object to <xref ref="t-conn-def-path" />. After all, it is the <em>image</em> of <m>\gamma</m> that we would typically call the path. However, the definition as given is ubiquitous in topology. When it is convenient we do abuse terminology and refer indirectly to the image of <m>\gamma</m> as a path joining <m>\gamma(0)</m> to <m>\gamma(1)</m>.</p>
+
+            <definition xml:id="t-conn-def-path-connected-space">
+                <statement>
+                    A topological space <m>X</m> is <em>path-connected</em> if, for every pair of points <m>p</m>, <m>q \in X</m>, there is a path <m>\gamma \colon [0, 1] \to X</m> with <m>\gamma(0) = p</m> and <m>\gamma(1) = q</m>.
+                </statement>
+            </definition>
+
+            <exercise xml:id="t-conn-reverse-paths">
+                <statement>
+                    <xref ref="t-conn-def-path-connected-space" /> is symmetric in <m>p</m> and <m>q</m>. That is, whenever there is <m>\gamma</m> connecting <m>p</m> and <m>q</m> as in <xref ref="t-conn-def-path-connected-space" />, there is a path <m>-\gamma</m> such that <m>\gamma(0) = q</m> and <m>\gamma(1) = p</m>.
+                </statement>
+                <hint>
+                    Give an explicit formula for <m>-\gamma</m>.
+                </hint>
+            </exercise>
+        </section>
+    </article>
+</mathbook>
