@@ -2,8 +2,11 @@
 
 <mathbook xml:lang="en-US">
     <docinfo>
-        <!-- <macros>
-            \theoremstyle{plain}
+        <macros>
+            <!-- \usepackage{xparse} -->
+            \newcommand{\RR}{\mathbf{R}}
+            <!-- \NewDocumentCommand{\RR}{}{\mathbf{R}} -->
+            <!-- \theoremstyle{plain}
             \newtheorem{theorem}{Theorem}
             \newtheorem{corollary}[theorem]{Corollary}
             \newtheorem{lemma}[theorem]{Lemma}
@@ -18,8 +21,8 @@
             \newtheorem*{axiom*}{Axiom}
 
             \theoremstyle{remark}
-            \newtheorem*{remark*}{Remark}
-        </macros> -->
+            \newtheorem*{remark*}{Remark} -->
+        </macros>
         <initialism>T</initialism>
     </docinfo>
     <article xml:id="t-conn">
@@ -37,7 +40,7 @@
     
             <definition xml:id="t-conn-def-path">
                 <statement>
-                    A <em>path</em> in a topological space <m>X</m> is a continuous function <m>\gamma \colon [0, 1] \to X</m>.
+                    A <em>path</em> in a topological space <m>X</m> is a piecewise continuous function <m>\gamma \colon [0, 1] \to X</m>.
                 </statement>
             </definition>
 
@@ -57,6 +60,36 @@
                     Give an explicit formula for <m>-\gamma</m>.
                 </hint>
             </exercise>
+
+            <p>The next two exercises suggest that this is a good definition. Remember that connectedness is supposed to mean that the space is <lt />all one piece<rq />.</p>
+
+            <exercise xml:id="t-conn-intervals-are-path-connected">
+                <statement>
+                    In the topological space <m>\RR_{\mathrm{std}}</m>, every interval is path-connected.
+                </statement>
+            </exercise>
+
+            <exercise xml:id="t-conn-convex-sets-are-path-connected">
+                <statement>
+                    In <m>\RR^2</m> with the standard topology, every <em>convex</em> set is path-connected. 
+                </statement>
+            </exercise>
+
+            <p>However, there are spaces that seem to meet our informal criterion that are not path-connected in the sense of <xref ref="t-conn-def-path-connected-space" />. We need a variant of a definition from elsewhere in the book.</p>
+
+            <definition xml:id="t-conn-def-closed-topologists-sine">
+                <statement>
+                    The <em>closed topologists' sine curve</em> is the set <me>\left\{ (0, y) : -1 \leq y \leq 1 \right\} \cup \left\{ (x, \sin{\frac{1}{x}}) : 0 \lt x \lt 1 \right\}.</me>
+                </statement>
+            </definition>
+
+            <exercise xml:id="t-conn-closed-topologists-sine-not-path-connected">
+                <statement>
+                    <p>The closed topologists' sine curve (<xref ref="t-conn-def-closed-topologists-sine"/>) is not path-connected.</p>
+                </statement>
+            </exercise>
+
+            <p>If you disagree that this space is <lq />all one piece<rq />, then tell me: when you draw it, where must you pick up the pencil?</p>
         </section>
     </article>
 </mathbook>
